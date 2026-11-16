@@ -1,5 +1,5 @@
-// 버전 068bb44084
-const C='sangjin-room-068bb44084';
+// 버전 9caaf90629
+const C='sangjin-room-9caaf90629';
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(['./','index.html','manifest.webmanifest','icon-192.png','icon-512.png'])));});
 self.addEventListener('activate',e=>e.waitUntil((async()=>{for(const k of await caches.keys()){if(k!==C&&k.startsWith('sangjin-room-'))await caches.delete(k);}await self.clients.claim();})()));
 async function fresh(){const c=await caches.open(C);const old=await c.match('index.html');
